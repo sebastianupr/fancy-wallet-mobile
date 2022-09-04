@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>889433540093-jg7p2gn4v06pj1qgqhk3l4v8gud33o6o.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.889433540093-jg7p2gn4v06pj1qgqhk3l4v8gud33o6o</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC0Mwf5fN2Rx_uRsOIu4-w0E_rc4NNPTjE</string>
+	<key>GCM_SENDER_ID</key>
+	<string>889433540093</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.sebastianuprdev.fancywallet</string>
+	<key>PROJECT_ID</key>
+	<string>fancy-wallet</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fancy-wallet.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:889433540093:ios:0f5f7452dc23ba54b64594</string>
+</dict>
+</plist>
