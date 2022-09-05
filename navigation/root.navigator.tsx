@@ -5,18 +5,9 @@ import AuthNavigator from "./auth.navigator";
 import MainNavigator from "./main.navigator";
 
 import useSession from "../hooks/use-session.hook";
-import { useEffect } from "react";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import { auth } from "../firebase";
 
 const RootNavigator: React.FC = () => {
   const { currentUser } = useSession();
-
-  useEffect(() => {
-    // auth.
-    // AsyncStorage.clear()
-    // AsyncStorage.getItem("@fancywallet:googleAccessToken").then(console.log);
-  }, []);
 
   return (
     <RootStack.Navigator screenOptions={{ headerShown: false }}>

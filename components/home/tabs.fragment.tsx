@@ -41,6 +41,7 @@ export default function UserCardsFragment() {
       >
         {tabs.map(({ id, Section }) => (
           <TabView.Item key={id} style={styles.tabView}>
+            {/* In this approach cannot use ScrollView for the next issue with TabView items: https://github.com/react-native-elements/react-native-elements/issues/3091 */}
             <FlatList data={[{}]} renderItem={() => <Section />} />
           </TabView.Item>
         ))}
