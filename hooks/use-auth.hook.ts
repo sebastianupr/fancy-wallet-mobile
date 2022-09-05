@@ -1,20 +1,21 @@
 import { useEffect } from "react";
 import { GoogleAuthProvider, signInWithCredential } from "firebase/auth";
-import { useAuthRequest } from "expo-auth-session/providers/google";
-import { useNavigation } from "@react-navigation/core";
+import * as Google from "expo-auth-session/providers/google";
+import * as WebBrowser from "expo-web-browser";
 import { auth } from "../firebase";
 import config from "../config/app.config";
+
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
+WebBrowser.maybeCompleteAuthSession();
 
 const { GOOGLE_IOS_CLIENT_ID, GOOGLE_EXPO_CLIENT_ID } = config();
 
 export default function useAuth() {
-  const [_request, response, googlePromptLogin] = useAuthRequest({
-    // TODO: Move this to env file
+  const [_request, response, googlePromptLogin] = Google.useAuthRequest({
     iosClientId: GOOGLE_IOS_CLIENT_ID,
     expoClientId: GOOGLE_EXPO_CLIENT_ID,
   });
-
-  const navigation = useNavigation();
 
   const signIn = async () => {
     try {
@@ -28,6 +29,7 @@ export default function useAuth() {
   const signOut = async () => {
     try {
       await auth.signOut();
+      await AsyncStorage.clear();
     } catch (err) {
       // TODO: Handler error
       console.error(err);
@@ -47,12 +49,6 @@ export default function useAuth() {
       });
     }
   }, [response]);
-
-  useEffect(() => {
-    auth.onAuthStateChanged(() => {
-      // navigation.navigate(RootRoutes.Main as never);
-    });
-  }, []);
 
   return {
     signIn,

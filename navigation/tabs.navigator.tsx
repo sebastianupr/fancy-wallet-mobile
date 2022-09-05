@@ -3,6 +3,8 @@ import { Icon, useTheme } from "@rneui/themed";
 import { TabsStack, TabsRoutes } from "./routes";
 
 import HomeScreen from "../screens/dashboard/home.screen";
+import ProfileScreen from "../screens/dashboard/profile.screen";
+
 import { TABS_ICONS } from "../theme/tabs.customization";
 
 export default function TabsNavigator() {
@@ -13,24 +15,22 @@ export default function TabsNavigator() {
       initialRouteName={TabsRoutes.Home}
       screenOptions={({ route }) => ({
         headerShown: false,
-        tabBarIcon: ({ focused, color, size }) => {
+        tabBarIcon: ({ color, size }) => {
           const iconName = TABS_ICONS[route.name];
-
-          return <Icon name={iconName} size={size} color={color} />;
+          return (
+            <Icon name={iconName} type="ionicon" size={size} color={color} />
+          );
         },
 
         tabBarActiveTintColor: theme.colors.white,
-        tabBarInactiveTintColor: "gray",
+        tabBarInactiveTintColor: theme.colors.primaryLight,
         tabBarStyle: {
-          margin: 0,
           backgroundColor: theme.colors.pink,
-        },
-        tabBarLabelStyle: {
-          margin: 0,
         },
       })}
     >
       <TabsStack.Screen name={TabsRoutes.Home} component={HomeScreen} />
+      <TabsStack.Screen name={TabsRoutes.Profile} component={ProfileScreen} />
     </TabsStack.Navigator>
   );
 }
