@@ -19,7 +19,9 @@ export default function ProfileDetailFragment() {
         />
 
         <View style={styles.profileInfoContainer}>
-          <Text h4>{_get(currentUser, "displayName", "")}</Text>
+          <Text h4 style={{ textAlign: "center" }}>
+            {_get(currentUser, "displayName", "")}
+          </Text>
           <Text style={styles.emailText}>{_get(currentUser, "email", "")}</Text>
         </View>
       </View>
@@ -65,7 +67,8 @@ const useStyles = makeStyles((theme) => ({
   },
 
   emailText: {
-    fontSize: 16,
+    marginTop: 2.5,
+    fontSize: 13,
     color: theme.colors.grey5,
     textAlign: "center",
   },
