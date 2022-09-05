@@ -17,6 +17,7 @@ export enum MainRoutes {
 
 export enum TabsRoutes {
   Home = "Home",
+  Profile = "Profile",
 }
 
 export type RootStackParamList = {
@@ -35,6 +36,7 @@ export type MainStackParamList = {
 
 export type TabsStackParamList = {
   [TabsRoutes.Home]: undefined;
+  [TabsRoutes.Profile]: undefined;
 };
 
 export const RootStack = createStackNavigator<RootStackParamList>();
