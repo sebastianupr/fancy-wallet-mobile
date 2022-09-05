@@ -1,5 +1,5 @@
-import { useEffect, useMemo, useRef, useState } from "react";
-import { View, FlatList, ScrollView } from "react-native";
+import { useMemo, useState } from "react";
+import { View, FlatList } from "react-native";
 import { makeStyles, Tab, TabView, useTheme } from "@rneui/themed";
 
 import ListOfCards from "../list-of-cards.component";
